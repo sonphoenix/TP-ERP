@@ -1,0 +1,52 @@
+<odoo>
+    <record id="view_auteur_form" model="ir.ui.view">
+        <field name="name">gestion.bibliotheque.auteur.form</field>
+        <field name="model">gestion.bibliotheque.auteur</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nom"/>
+                        <field name="prenom"/>
+                        <field name="date_naissance"/>
+                        <field name="nationalite"/>
+                        <field name="sexe"/>
+                    </group>
+                    <notebook>
+                        <page string="Livres">
+                            <field name="livre_ids">
+                                <tree>
+                                    <field name="titre"/>
+                                    <field name="isbn"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_auteur_tree" model="ir.ui.view">
+        <field name="name">gestion.bibliotheque.auteur.tree</field>
+        <field name="model">gestion.bibliotheque.auteur</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nom"/>
+                <field name="prenom"/>
+                <field name="date_naissance"/>
+                <field name="nationalite"/>
+                <field name="sexe"/>
+                <field name="livre_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_auteur" model="ir.actions.act_window">
+        <field name="name">Auteurs</field>
+        <field name="res_model">gestion.bibliotheque.auteur</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+   
+</odoo>

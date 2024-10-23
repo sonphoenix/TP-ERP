@@ -1,0 +1,61 @@
+<odoo>
+    <record id="view_emprunt_form" model="ir.ui.view">
+        <field name="name">gestion.bibliotheque.emprunt.form</field>
+        <field name="model">gestion.bibliotheque.emprunt</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="date_debut"/>
+                        <field name="date_fin"/>
+                        <field name="rendu"/>
+                        <field name="livre_id"/>
+                        <field name="emprunteur_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_emprunt_tree" model="ir.ui.view">
+        <field name="name">gestion.bibliotheque.emprunt.tree</field>
+        <field name="model">gestion.bibliotheque.emprunt</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="livre_id"/>
+                <field name="emprunteur_id"/>
+                <field name="date_debut"/>
+                <field name="date_fin"/>
+                <field name="rendu"/>
+            </tree>
+        </field>
+    </record>
+
+
+    
+<record id="view_emprunt_search" model="ir.ui.view">
+    <field name="name">emprunt.search</field>
+    <field name="model">gestion.bibliotheque.emprunt</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="date_debut"/>
+            <field name="date_fin"/>
+            
+            <field name="emprunteur_id" string="Emprunteur"/>
+            
+            <field name="livre_id.auteur_id" string="Auteur"/>
+            
+            <filter string="Rendu" name="rendu_oui" domain="[('rendu', '=', 'oui')]"/>
+            <filter string="Non Rendu" name="rendu_non" domain="[('rendu', '=', 'non')]"/>
+        </search>
+    </field>
+</record>
+
+    <record id="action_emprunt" model="ir.actions.act_window">
+        <field name="name">Emprunts</field>
+        <field name="res_model">gestion.bibliotheque.emprunt</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_emprunt_search"/>
+    </record>
+
+</odoo>

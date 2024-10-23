@@ -1,0 +1,10 @@
+<odoo>
+    <!-- Menu for Bibliothèque -->
+    <menuitem id="menu_gestion_bibliotheque_root" name="Bibliothèque" sequence="1"/>
+
+    <!-- Submenus under Bibliothèque -->
+    <menuitem id="menu_auteur" name="Auteurs" parent="menu_gestion_bibliotheque_root" action="action_auteur" sequence="10"/>
+    <menuitem id="menu_livre" name="Livres" parent="menu_gestion_bibliotheque_root" action="action_livre" sequence="20"/>
+    <menuitem id="menu_emprunteur" name="Emprunteurs" parent="menu_gestion_bibliotheque_root" action="action_emprunteur" sequence="30"/>
+    <menuitem id="menu_emprunt" name="Emprunts" parent="menu_gestion_bibliotheque_root" action="action_emprunt" sequence="40"/>
+</odoo>
