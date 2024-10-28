@@ -33,10 +33,23 @@
         </field>
     </record>
 
+
+    <record id="view_livre_search" model="ir.ui.view">
+    <field name="name">gestion.bibliotheque.livre.search</field>
+    <field name="model">gestion.bibliotheque.livre</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="isbn"/>
+        </search>
+        </field>
+        </record>
+
+
     <record id="action_livre" model="ir.actions.act_window">
         <field name="name">Livres</field>
         <field name="res_model">gestion.bibliotheque.livre</field>
         <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_livre_search"/>
     </record>
 
 </odoo>

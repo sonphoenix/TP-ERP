@@ -10,3 +10,5 @@ class Emprunt(models.Model):
     rendu = fields.Selection([('oui', 'Oui'), ('non', 'Non')], string='Rendu', required=True)
     livre_id = fields.Many2one('gestion.bibliotheque.livre', string='Livre', required=True)
     emprunteur_id = fields.Many2one('gestion.bibliotheque.emprunteur', string='Emprunteur', required=True)
+    auteur_id = fields.Many2one(related='livre_id.auteur_id', string='Auteur', store=True)
+

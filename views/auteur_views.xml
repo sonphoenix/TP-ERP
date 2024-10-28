@@ -41,11 +41,22 @@
             </tree>
         </field>
     </record>
+    <record id="view_auteur_search" model="ir.ui.view">
+    <field name="name">gestion.bibliotheque.auteur.search</field>
+    <field name="model">gestion.bibliotheque.auteur</field>
+    <field name="arch" type="xml">
+        <search>
+            <filter string="Tunisian Authors" name="tunisian_authors" domain="[('nationalite', '=', 'Tunisienne')]"/>
+        </search>
+    </field>
+    </record>
+
 
     <record id="action_auteur" model="ir.actions.act_window">
         <field name="name">Auteurs</field>
         <field name="res_model">gestion.bibliotheque.auteur</field>
         <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_auteur_search"/>
     </record>
 
    

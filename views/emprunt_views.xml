@@ -27,6 +27,8 @@
                 <field name="date_debut"/>
                 <field name="date_fin"/>
                 <field name="rendu"/>
+                <field name="auteur_id"/>
+
             </tree>
         </field>
     </record>
@@ -37,16 +39,13 @@
     <field name="name">emprunt.search</field>
     <field name="model">gestion.bibliotheque.emprunt</field>
     <field name="arch" type="xml">
-        <search>
-            <field name="date_debut"/>
-            <field name="date_fin"/>
-            
+        <search>            
             <field name="emprunteur_id" string="Emprunteur"/>
             
-            <field name="livre_id.auteur_id" string="Auteur"/>
-            
-            <filter string="Rendu" name="rendu_oui" domain="[('rendu', '=', 'oui')]"/>
-            <filter string="Non Rendu" name="rendu_non" domain="[('rendu', '=', 'non')]"/>
+            <field name="auteur_id" string="Auteur"/>
+            <group expand="1" string="Group By">
+                <filter string="Rendu?" name="group_rendu" context="{'group_by': 'rendu'}"/>
+            </group>
         </search>
     </field>
 </record>
