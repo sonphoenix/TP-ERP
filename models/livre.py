@@ -10,5 +10,5 @@ class Livre(models.Model):
     isbn = fields.Char(string='ISBN', required=True)
     nbre_pages = fields.Integer(string='Nombre de Pages', required=True)
     image_livre = fields.Binary(string='Image du Livre')
-    auteur_id = fields.Many2one('gestion.bibliotheque.auteur', string='Auteur')
-    emprunt_lignes_id=fields.one2Many('gestion.bibliotheque.emprunt_lignes',string="emprunt lignes")
+    auteur_id = fields.Many2many('gestion.bibliotheque.auteur', string='Auteur')
+    emprunt_lignes_id=fields.One2many('gestion.bibliotheque.emprunt_lignes',string="emprunt lignes")
