@@ -1,0 +1,9 @@
+from odoo import models, fields
+class Emprunt_lignes(models.Model):
+    _name = 'gestion.bibliotheque.emprunt_lignes'
+    _description = 'enprunt_lignes'
+
+
+    livre_id = fields.Many2one('gestion.bibliotheque.livre', string='Livre', required=True)
+    emprunt_id = fields.Many2one('gestion.bibliotheque.emprunt', string='Emprunt', required=True)
+

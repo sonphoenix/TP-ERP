@@ -43,7 +43,7 @@
             <field name="emprunteur_id" string="Emprunteur"/>
             
             <field name="auteur_id" string="Auteur"/>
-            <group expand="1" string="Group By">
+            <group expand="0" string="Group By">
                 <filter string="Rendu?" name="group_rendu" context="{'group_by': 'rendu'}"/>
             </group>
         </search>
